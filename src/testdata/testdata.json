@@ -1,0 +1,71 @@
+{
+  "date": {
+    "empty": {
+      "value": null,
+      "expectedMessage": "Show Date is required"
+    },
+    "valid": {
+      "value": "13/08/2026",
+      "expectedMessage": "NO ERROR"
+    },
+    "weekend": {
+      "value": "16/08/2026",
+      "expectedMessage": "Show Date must be a weekday"
+    },
+    "invalid": {
+      "value": "13/18/2026",
+      "expectedMessage": "Date must be in dd/mm/yyyy format"
+    },
+    "feb30": {
+      "value": "30/02/2026",
+      "expectedMessage": "Invalid date"
+    },
+    "feb29": {
+      "value": "29/02/2026",
+      "expectedMessage": "Invalid date"
+    }
+  },
+  "ticketPrice": {
+    "valid": {
+      "value": "200",
+      "expectedMessage": "NO ERROR"
+    },
+    "negative": {
+      "value": "-1",
+      "expectedMessage": "Value must be greater than or equal to 0."
+    },
+    "invalid": {
+      "value": "0",
+      "expectedMessage": "Ticket Price must be a valid positive number"
+    }
+  },
+  "time": {
+    "empty": {
+      "value": null,
+      "expectedMessage": "Show Time is required"
+    },
+    "invalid": {
+      "value": "13/08",
+      "expectedMessage": "Show Time must be in HH:MM format (24-hour)"
+    },
+    "time25": {
+      "value": "25:05",
+      "expectedMessage": "Show Time must be in HH:MM format (24-hour)"
+    },
+    "valid": {
+      "value": "15:45",
+      "expectedMessage": "NO ERROR"
+    }
+  },
+  "discount":{
+    "student": 30,
+    "senior": 60
+  },
+  "theater": ["Theater 1","Theater 2","Theater 3", "Theater 4", "IMAX Theater", "VIP Theater"],
+  "notes": {
+    "valid": "123456789112345678921234567893123456789thisis51char",
+    "invalid": "12345678911234567892123456789312345678thisis51char"
+  },
+  "cinemaTableList": ["Schedule ID",  "Movie Title",  "Theater",  "Show Date",  "Show Time",  "Subtitles",  "IMAX",  "Notes"],
+  "movieTitle": ["Avatar 3", "Avengers 5", "Fast X 2", "Jurassic World 4", "Mission Impossible 8", "Spider-Man 4", "Star Wars IX", "Top Gun 3", "The Batman 2"]
+}
