@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node lts
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: '26.x'
 
       - name: Install root dependencies
         run: npm ci 
@@ -36,6 +36,12 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
+
+      - name: Prepare report for deployment (resolve symlinks)
+        if: always()
+        run: |
+          rm -rf playwright-report-deploy/
+          cp -rL playwright-report/ playwright-report-deploy/
 
       - name: Upload Pages Artifact
         uses: actions/upload-artifact@v5
