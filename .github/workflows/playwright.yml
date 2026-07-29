@@ -4,6 +4,13 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
+
+permissions:
+  contents: read
+  pages: write
+  deployments: write
+  id-token: write
+
 jobs:
   test:
     timeout-minutes: 60
@@ -31,12 +38,11 @@ jobs:
         run: npx playwright test
 
       - name: Upload Pages Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: 'github-pages'
           path: 'playwright-report/'
-          retention-days: 30
 
       - name: Deploy to Github Pages
         id: deployment
